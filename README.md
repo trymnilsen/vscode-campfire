@@ -1,10 +1,10 @@
-# Node Exec
+# Campfire
 
-### Execute the current file or your selected code with node.js.
+### Excutes firebase realtime db queries from a vscode text buffer
 
 ## Usage
 
-* To execute the current file or the selection press `F8` or use the command `Execute Node.js`
+* To execute the current file or the selection press `F8` or use the command `Execute Firebase query`
 * To cancel a running process press `F9`
 
 ## Configuration
@@ -13,7 +13,7 @@ Clear output before execution
 
 ````json
 {
-  "miramac.node.clearOutput": true
+  "campfire.clearOutput": true
 }
 ````
 
@@ -21,7 +21,7 @@ Show start and end info
 
 ````json
 {
-  "miramac.node.showInfo": true
+  "campfire.showInfo": true
 }
 ````
 
@@ -29,8 +29,8 @@ Show stdout and stderr
 
 ````json
 {
-  "miramac.node.showStdout": true,
-  "miramac.node.showStderr": true
+  "campfire.showStdout": true,
+  "campfire.showStderr": true
 }
 ````
 
@@ -38,51 +38,16 @@ If `miramac.node.legacyMode` is `true` (default) the extention will not use new 
 
 ````json
 {
-  "miramac.node.legacyMode": false
+  "campfire.legacyMode": false
 }
 ````
 
-### The folloing options need to set the legacyMode off
 
-Set environment variables for execution:
-
-````json
-{
-  "miramac.node.env": {
-      "NODE_ENV": "production"
-  }
-}
-````
-
-Add arguments for execution:
+Change the node binary for execution (default to node binary from PATH if unset)
 
 ````json
 {
-  "miramac.node.args": ["--port", "1337"]
-}
-````
-
-Add options for execution:
-
-````json
-{
-  "miramac.node.options": ["--require", "babel-register"]
-}
-````
-
-Change the node binary for execution
-
-````json
-{
-  "miramac.node.nodeBin": "/path/to/some/bin/node-7.0"
-}
-````
-
-Some code that is executed with each run
-
-````json
-{
-  "miramac.node.includeCode": "const DEBUG = true; const fs = require('fs'); "
+  "campfire.nodeBin": "/path/to/some/bin/node-7.0"
 }
 ````
 
@@ -97,6 +62,7 @@ require('child_process').spawn('node', options,[tmpFile, args])
 
 Any data from `stdout` or `stderr` will be printed to an OutputChannel. Unfortunately console colors won't work.
 
-> Bugs and feedback: https://github.com/Miramac/vscode-exec-node/issues
+## Credits
+Based on [https://github.com/Miramac/vscode-exec-node](https://github.com/Miramac/vscode-exec-node)
 
 **Enjoy!**
